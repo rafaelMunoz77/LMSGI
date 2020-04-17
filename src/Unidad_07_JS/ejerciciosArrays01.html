@@ -114,6 +114,45 @@
     </script>
     <p id="solucion06">Aquí aparecerá tu solución</p>
     <hr />
+    <p>7º.- Realiza un ejercicio que inicialice un array de 15 objetos de un tipo de clase que crees. Los objetos deben tener al menos un campo de tipo numérico y debes ordenar los objetos en base a ese campo</p>
+    <button onclick="JavaScript:solucion07();">Resuelve</button>
+    <script>
+        class Persona {
+            constructor (id, nombre) {
+                this.id = id;
+                this.nombre = nombre;
+            }
+
+            getId () {
+                return this.id;
+            }
+
+            getNombre() {
+                return this.nombre;
+            }
+
+            toString() {
+                return "Persona - id: " + this.id + " - Nombre: " + this.nombre;
+            }
+        }
+
+        var nombres = ["Rafa", "Carmen", "Juan", "Pablo", "Pedro"];
+
+        function solucion07() {
+            var array = [];
+            for (var i = 0; i < 15; i++) {
+                array.push(new Persona(valorAlAzar(0, 100), nombres[valorAlAzar(0, nombres.length - 1)]));
+            }
+
+            var strSolucion = "Array original: " + array;
+            array.sort(function(a, b){return a.id - b.id});
+
+            strSolucion += "<br/>Array modificado: " + array;
+            document.getElementById("solucion07").innerHTML = strSolucion;
+        }
+    </script>
+    <p id="solucion07">Aquí aparecerá tu solución</p>
+    <hr />
 </body>
 
 </html>
